@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(
+    to bottom,
+    hsl(273, 75%, 66%),
+    hsl(240, 73%, 65%)
+  );
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 920px;
+  height: 509px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.image {
+  background: url("./images/bg-pattern-desktop.svg") no-repeat;
+  background-size: auto;
+  background-position: -35em 70%;
+  position: relative;
+}
+.women-mb {
+  display: none;
+}
+.women {
+  position: absolute;
+  top: 10%;
+  left: -18%;
+}
+.box {
+  position: absolute;
+  top: 41%;
+  left: -15%;
+}
+
+.accordian {
+  margin-top: 70px;
+  height: 80%;
+}
+
+.accordian_questions {
+  width: 80%;
+  margin: 30px 0;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: hsl(238, 29%, 16%);
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  color: hsl(240, 6%, 50%);
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.question:hover {
+  color: hsl(14, 88%, 65%);
+}
+
+.question img {
+  align-self: center;
+}
+
+.answer {
+  display: none;
+  margin: 10px 0;
+  font-size: 13px;
+  color: hsl(240, 6%, 50%);
+}
+
+.active .answer {
+  display: block;
+}
+
+.active h3 {
+  color: hsl(237, 12%, 33%);
+}
+
+.active .question img {
+  transform: rotate(180deg);
+  transition: 0.2s ease-in;
+}
+
+@media screen and (max-width: 1024px) {
+  main {
+    width: 880px;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  body {
+    justify-content: center;
+    align-content: flex-end;
+  }
+  main {
+    width: 400px;
+    height: 460px;
+    grid-template-columns: 1fr;
+    overflow: visible;
+  }
+  .accordian {
+    margin-top: 10px;
+    text-align: center;
+    height: 40vh;
+  }
+  .accordian_questions {
+    width: 80%;
+    margin: 20px auto;
+    text-align: left;
+  }
+  .question {
+    font-size: 14px;
+    margin: 10px auto;
+  }
+  .image {
+    background: url("./images/bg-pattern-mobile.svg") no-repeat top center;
+    height: 100%;
+  }
+  .women-mb {
+    display: block;
+    position: absolute;
+    top: -6.5em;
+    left: 3em;
+  }
+  .women,
+  .box {
+    display: none;
+  }
+}
+
+@media screen and (min-height: 720px) {
+  body {
+    align-content: center;
+  }
+  .accordian {
+    height: 32vh;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  main {
+    width: 350px;
+    height: 450px;
+  }
+  .question h3 {
+    font-size: 14px;
+  }
+  .women-mb {
+    left: 2em;
+  }
+}
